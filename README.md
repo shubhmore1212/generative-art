@@ -1,6 +1,9 @@
 # Generative Art with JavaScript
 
-Welcome to the mesmerizing world of generative art powered by JavaScript! 🎨✨ Dive into a realm where code meets creativity, producing visually stunning and unique artworks.
+Welcome to the mesmerizing world of generative art powered by JavaScript! 🎨✨ 
+
+
+Dive into a realm where code meets creativity, producing visually stunning and unique artworks.
 
 ## Overview
 
