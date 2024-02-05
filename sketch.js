@@ -1,14 +1,20 @@
 const canvasSketch = require("canvas-sketch");
 const { lerp } = require("canvas-sketch-util/math");
 const random = require("canvas-sketch-util/random");
+const loadImage = require("load-asset/loaders/loadImage");
 const palettes = require("nice-color-palettes");
 
+let img;
 const settings = {
   dimensions: [2048, 2048],
   //units: "in",
   // orientation: "landscape",
   pixelsPerInch: 600,
 };
+
+function preload() {
+  img = loadImage("./icons/one.svg");
+}
 
 const sketch = () => {
   const colorCount = random.rangeFloor(1, 6);
@@ -46,7 +52,7 @@ const sketch = () => {
 
     const x = lerp(margin, width - margin, 0);
     const y = lerp(margin, height - margin, 0);
-    context.fillStyle = "red";
+    context.fillStyle = "yellow";
     context.fillRect(0, 0, width, height);
 
     points.forEach((data) => {
@@ -61,15 +67,16 @@ const sketch = () => {
       // context.fillStyle = color;
       // context.fill();
 
-      context.save();
+      // context.save();
 
-      context.fillStyle = color;
-      context.font = `${radius * width}px "Helvetica"`;
-      context.translate(x, y);
-      context.rotate(rotation);
-      context.fillText("~`", 0, 0);
+      // context.fillStyle = color;
+      // // context.font = `${radius * width}px "Helvetica"`;
+      // context.translate(x, y);
+      // context.rotate(rotation);
+      // // context.fillText("~`", 0, 0);
 
-      context.restore();
+      // context.restore();
+      image(img, x, y, width / 2, height / 2);
     });
   };
 };
